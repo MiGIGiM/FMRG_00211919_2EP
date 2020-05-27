@@ -136,7 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\ConnectionDB.cs" />
+    <Compile Include="Controlador\ControladorNegocios.cs" />
     <Compile Include="Controlador\ControladorUsuario.cs" />
+    <Compile Include="Modelo\Negocios.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Vista\FrmChangePass.cs">
       <SubType>Form</SubType>
