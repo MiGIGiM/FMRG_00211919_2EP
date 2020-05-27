@@ -66,3 +66,5 @@ C:\Users\fmrod\OneDrive\Documentos\GitHub\FMRG_00211919_2EP\SourceCode\obj\Debug
 C:\Users\fmrod\OneDrive\Documentos\GitHub\FMRG_00211919_2EP\SourceCode\obj\Debug\SourceCode.csproj.CopyComplete
 C:\Users\fmrod\OneDrive\Documentos\GitHub\FMRG_00211919_2EP\SourceCode\obj\Debug\SourceCode.exe
 C:\Users\fmrod\OneDrive\Documentos\GitHub\FMRG_00211919_2EP\SourceCode\obj\Debug\SourceCode.pdb
+C:\Users\fmrod\OneDrive\Documentos\GitHub\FMRG_00211919_2EP\SourceCode\obj\Debug\SourceCode.Vista.FrmChangePass.resources
+C:\Users\fmrod\OneDrive\Documentos\GitHub\FMRG_00211919_2EP\SourceCode\obj\Debug\SourceCode.Vista.frmMain.resources

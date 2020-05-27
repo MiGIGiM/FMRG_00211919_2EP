@@ -45,7 +45,7 @@ namespace SourceCode
             {
                 if (txtPassword.Text.Equals(cmbLogUser.SelectedValue.ToString()))
                 {
-                    frmMain frmMain = new frmMain();
+                    frmMain frmMain = new frmMain((Usuario) cmbLogUser.SelectedItem);
                     Hide();
                     frmMain.Show();
                 }
@@ -54,6 +54,13 @@ namespace SourceCode
                     MessageBox.Show("Contraseña incorrecta.\nIntente denuevo mas tarde", "", MessageBoxButtons.OK);
                 }
             }
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            FrmChangePass frmChangePass = new FrmChangePass();
+            frmChangePass.Show();
+            
         }
     }
 }

@@ -13,12 +13,12 @@ namespace SourceCode.Vista
 {
     public partial class frmMain : Form
     {
-        private Usuario actual;
+        private Usuario u;
 
-        public frmMain()
+        public frmMain(Usuario u)
         {
             InitializeComponent();
-            this.actual = u;
+            this.u = u;
         }
 
     }

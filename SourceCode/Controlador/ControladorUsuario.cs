@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SourceCode.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace SourceCode.Controlador
 
             try
             {
-                tableUsuarios = ConnectionDB.EjecutarConsulta("SELECT * FROM USUARIO");
+                tableUsuarios = ConnectionDB.EjecutarConsulta("SELECT * FROM APPUSER");
             }
             catch (Exception ex)
             {
@@ -32,7 +33,8 @@ namespace SourceCode.Controlador
                         dr[0].ToString(),
                         dr[1].ToString(),
                         dr[2].ToString(),
-                        Convert.ToBoolean(dr[3].ToString())
+                        dr[3].ToString(),
+                        Convert.ToBoolean(dr[4].ToString())
                     )
                 );
             }
@@ -46,7 +48,7 @@ namespace SourceCode.Controlador
 
             try
             {
-                tableUsuarios = ConnectionDB.EjecutarConsulta("SELECT * FROM USUARIO");
+                tableUsuarios = ConnectionDB.EjecutarConsulta("SELECT * FROM APPUSER");
             }
             catch (Exception ex)
             {
@@ -61,10 +63,10 @@ namespace SourceCode.Controlador
         {
             try
             {
-                ConnectionDB.EjecutarComando($"UPDATE USUARIO SET contrasenia = '{nueva}' " +
-                    $"WHERE idUsuario = {idUsuario}");
+                ConnectionDB.EjecutarComando($"UPDATE APPUSER SET password = '{nueva}' " +
+                    $"WHERE idUser = {idUsuario}");
 
-                MessageBox.Show("Se ha actualizado la contrasena");
+                MessageBox.Show("Se ha actualizado la contraseña exitosamente", " ", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -74,14 +76,15 @@ namespace SourceCode.Controlador
 
         
 
-        public static void CrearUsuario(string usuario)
+        public static void CrearUsuario(string usuario, string fullname)
         {
             try
             {
-                ConnectionDB.EjecutarComando("INSERT INTO USUARIO(nombreUsuario, contrasenia, tipo)" +
-                    $" VALUES('{usuario}', '{usuario}', false)");
+                ConnectionDB.EjecutarComando("INSERT INTO APPUSER(fullname, username, password, usertype)" +
+                    $" VALUES('{fullname}', '{usuario}', '{usuario}', false)");
 
-                MessageBox.Show("Se ha agregado el nuevo usuario, contrasenia igual al nombre");
+                MessageBox.Show("Se ha agregado el nuevo usuario.\n" +
+                    "Valores por defecto: contraseña igual a nombre de usuario", " ", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {

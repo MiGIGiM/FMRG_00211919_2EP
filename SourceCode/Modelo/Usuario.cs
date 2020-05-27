@@ -10,17 +10,21 @@ namespace SourceCode.Modelo
     {
         public string IdUsuario { get; set; }
 
+        public string NombreCompleto { get; set; }
+
         public string NombreUsuario { get; set; }
 
         public string Contrasena { get; set; }
 
         public bool Admin { get; set; }
 
-        public Usuario(string idUsuario, string nombreUsuario, string contrasenia, bool admin)
+        public Usuario(string idUsuario, string nombreCompleto, string nombreUsuario, string contrasena, bool admin)
         {
             IdUsuario = idUsuario;
+            NombreCompleto = nombreCompleto;
             NombreUsuario = nombreUsuario;
-            Contrasena = contrasenia;
+            Contrasena = contrasena;
             Admin = admin;
         }
+    }
 }
