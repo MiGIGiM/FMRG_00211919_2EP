@@ -43,6 +43,18 @@
             this.cmbDeleteUser = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNombreNeg = new System.Windows.Forms.TextBox();
+            this.txtDescNeg = new System.Windows.Forms.TextBox();
+            this.btnAddNeg = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnDeleteNeg = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvNegocios = new System.Windows.Forms.DataGridView();
+            this.txtIDNeg = new System.Windows.Forms.TextBox();
             this.tabOpciones.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -50,6 +62,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.grpDeleteUser.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNegocios)).BeginInit();
             this.SuspendLayout();
             // 
             // tabOpciones
@@ -209,16 +225,136 @@
             // 
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.94512F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.05488F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.28049F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.71951F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dgvNegocios, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.81424F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.18576F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.7678F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.2322F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(656, 323);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnAddNeg);
+            this.groupBox1.Controls.Add(this.txtDescNeg);
+            this.groupBox1.Controls.Add(this.txtNombreNeg);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(395, 73);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Agregar Negocio: ";
+            // 
+            // txtNombreNeg
+            // 
+            this.txtNombreNeg.Location = new System.Drawing.Point(91, 19);
+            this.txtNombreNeg.Name = "txtNombreNeg";
+            this.txtNombreNeg.Size = new System.Drawing.Size(163, 20);
+            this.txtNombreNeg.TabIndex = 0;
+            // 
+            // txtDescNeg
+            // 
+            this.txtDescNeg.Location = new System.Drawing.Point(91, 45);
+            this.txtDescNeg.Name = "txtDescNeg";
+            this.txtDescNeg.Size = new System.Drawing.Size(163, 20);
+            this.txtDescNeg.TabIndex = 0;
+            // 
+            // btnAddNeg
+            // 
+            this.btnAddNeg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddNeg.Location = new System.Drawing.Point(278, 24);
+            this.btnAddNeg.Name = "btnAddNeg";
+            this.btnAddNeg.Size = new System.Drawing.Size(100, 36);
+            this.btnAddNeg.TabIndex = 1;
+            this.btnAddNeg.Text = "Agregar";
+            this.btnAddNeg.UseVisualStyleBackColor = true;
+            this.btnAddNeg.Click += new System.EventHandler(this.btnAddNeg_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnDeleteNeg);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtIDNeg);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(404, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(249, 73);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Eliminar Negocio: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nombre: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Descripción: ";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(426, 33);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(132, 21);
+            this.comboBox2.TabIndex = 0;
+            // 
+            // btnDeleteNeg
+            // 
+            this.btnDeleteNeg.ForeColor = System.Drawing.Color.Red;
+            this.btnDeleteNeg.Location = new System.Drawing.Point(36, 45);
+            this.btnDeleteNeg.Name = "btnDeleteNeg";
+            this.btnDeleteNeg.Size = new System.Drawing.Size(186, 22);
+            this.btnDeleteNeg.TabIndex = 1;
+            this.btnDeleteNeg.Text = "Eliminar";
+            this.btnDeleteNeg.UseVisualStyleBackColor = true;
+            this.btnDeleteNeg.Click += new System.EventHandler(this.btnDeleteNeg_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "ID: ";
+            // 
+            // dgvNegocios
+            // 
+            this.dgvNegocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel2.SetColumnSpan(this.dgvNegocios, 2);
+            this.dgvNegocios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNegocios.Location = new System.Drawing.Point(3, 82);
+            this.dgvNegocios.Name = "dgvNegocios";
+            this.dgvNegocios.Size = new System.Drawing.Size(650, 238);
+            this.dgvNegocios.TabIndex = 2;
+            // 
+            // txtIDNeg
+            // 
+            this.txtIDNeg.Location = new System.Drawing.Point(41, 21);
+            this.txtIDNeg.Name = "txtIDNeg";
+            this.txtIDNeg.Size = new System.Drawing.Size(163, 20);
+            this.txtIDNeg.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -238,6 +374,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.grpDeleteUser.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNegocios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,5 +401,17 @@
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.ComboBox cmbDeleteUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddNeg;
+        private System.Windows.Forms.TextBox txtDescNeg;
+        private System.Windows.Forms.TextBox txtNombreNeg;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnDeleteNeg;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvNegocios;
+        private System.Windows.Forms.TextBox txtIDNeg;
     }
 }

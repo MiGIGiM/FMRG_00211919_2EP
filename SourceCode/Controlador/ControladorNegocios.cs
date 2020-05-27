@@ -29,10 +29,11 @@ namespace SourceCode.Controlador
         {
                 negocios.Add(new Negocios
                 (
-                    dr[0].ToString(),
-                    dr[1].ToString()
+                    Convert.ToInt32(dr[0].ToString()),
+                    dr[1].ToString(),
+                    dr[2].ToString()
                 )
-            );
+            ); ;
         }
 
         return negocios;
@@ -70,19 +71,18 @@ namespace SourceCode.Controlador
             }
         }
 
-        public static void BorrarNegocio(int id)
+        public static void EliminarNegocio(string id)
         {
             try
             {
-                ConnectionDB.EjecutarComando("DELETE FROM BUSINESS" +
-                    $"WHERE idbusiness = {id}");
+                ConnectionDB.EjecutarComando($"DELETE FROM BUSINESS WHERE idbusiness = {id}");
 
+                MessageBox.Show("Se ha eliminado el negocio");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error");
             }
         }
-
     }
 }

@@ -37,6 +37,9 @@ namespace SourceCode.Vista
             cmbDeleteUser.DataSource = ControladorUsuario.GetUsuarios();
 
             dgvUsers.DataSource = ControladorUsuario.GetUsuariosTable();
+
+            dgvNegocios.DataSource = ControladorNegocios.GetNegociosTable();
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -117,6 +120,42 @@ namespace SourceCode.Vista
             catch (Exception ex)
             {
                 MessageBox.Show("Algo salió mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAddNeg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtDescNeg.Text.Equals("") || txtNombreNeg.Text.Equals(""))
+                {
+                    MessageBox.Show("No deje campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string auxname = txtNombreNeg.Text, auxdesc = txtDescNeg.Text;
+                    ControladorNegocios.CrearNegocio(auxname,auxdesc);
+                    txtNombreNeg.Text = "";
+                    txtDescNeg.Text = "";
+                    CargarListas();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo salió mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDeleteNeg_Click(object sender, EventArgs e)
+        {
+            if (txtIDNeg.Text.Equals(""))
+                MessageBox.Show("No se pueden dejar campos vacios");
+            else
+            {
+                ControladorNegocios.EliminarNegocio(txtIDNeg.Text);
+                CargarListas();
             }
         }
     }
