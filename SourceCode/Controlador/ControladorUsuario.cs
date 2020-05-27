@@ -11,7 +11,7 @@ namespace SourceCode.Controlador
 {
     public static class ControladorUsuario
     {
-        // Metodo que devuelve todos los usuarios en formato de lista
+
         public static List<Usuario> GetUsuarios()
         {
             var usuarios = new List<Usuario>();

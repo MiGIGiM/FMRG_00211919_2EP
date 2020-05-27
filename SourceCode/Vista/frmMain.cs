@@ -36,16 +36,38 @@ namespace SourceCode.Vista
             cmbDeleteUser.DisplayMember = "NombreUsuario";
             cmbDeleteUser.DataSource = ControladorUsuario.GetUsuarios();
 
+            cmbNombreNeg.DataSource = cmbNegocios.DataSource = null;
+            cmbNombreNeg.ValueMember = cmbNegocios.ValueMember = "Nombre";
+            cmbNegocios.DisplayMember = "Nombre";
+            cmbNombreNeg.DataSource = cmbNegocios.DataSource = ControladorNegocios.GetNegocios();
+
+
+            cmbNombreProd.DataSource = null;
+            cmbNombreProd.ValueMember = "NombreProd";
+            cmbNombreProd.DisplayMember = "NombreProd";
+            cmbNombreProd.DataSource = ControladorProducto.GetProductos();
+
+
             dgvUsers.DataSource = ControladorUsuario.GetUsuariosTable();
 
             dgvNegocios.DataSource = ControladorNegocios.GetNegociosTable();
 
+            dgvProd.DataSource = ControladorProducto.GetProductosTable();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
-        {
-            CargarListas();
-            GetUsernames();
+        {     
+            if (u.Admin)
+            {
+                CargarListas();
+                GetUsernames();
+                dgvPedidos.DataSource = ControladorPedido.GetPedidosTable();
+            }
+            else
+            {
+
+            }
+
         }
 
         private List<string> GetUsernames()
@@ -150,11 +172,38 @@ namespace SourceCode.Vista
 
         private void btnDeleteNeg_Click(object sender, EventArgs e)
         {
-            if (txtIDNeg.Text.Equals(""))
-                MessageBox.Show("No se pueden dejar campos vacios");
+            if(MessageBox.Show("¿Seguro que desea eliminar el negocio?", "",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var obteneriD = (Negocios)cmbNombreNeg.SelectedItem;
+                    ControladorNegocios.EliminarNegocio(obteneriD.IdNegocio.ToString());
+                    CargarListas();
+                }
+
+        }
+
+        private void btnAddProd_Click(object sender, EventArgs e)
+        {
+            if (txtNameProd.Text.Equals(""))
+            {
+                MessageBox.Show("No deje campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
-                ControladorNegocios.EliminarNegocio(txtIDNeg.Text);
+                var obtenerId = (Negocios)cmbNegocios.SelectedItem;
+                ControladorProducto.CrearProducto(obtenerId.IdNegocio.ToString(),txtNameProd.Text);
+                txtNameProd.Text = "";
+                CargarListas();
+            }
+        }
+
+        private void btnDeleteProducto_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea eliminar el negocio?", "",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var obtenerId = (Producto)cmbNombreProd.SelectedItem;
+                ControladorProducto.EliminarProducto(obtenerId.IdProduct.ToString());
                 CargarListas();
             }
         }

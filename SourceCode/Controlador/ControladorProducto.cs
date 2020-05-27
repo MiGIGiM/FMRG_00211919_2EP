@@ -9,57 +9,57 @@ using System.Windows.Forms;
 
 namespace SourceCode.Controlador
 {
-    public static class  ControladorNegocios
+    public static class ControladorProducto
     {
-        public static List<Negocios> GetNegocios()
+        public static List<Producto> GetProductos()
         {
-            var negocios = new List<Negocios>();
-            DataTable tableNegocios = null;
+            var productos = new List<Producto>();
+            DataTable tableProductos = null;
             try
             {
-            tableNegocios = ConnectionDB.EjecutarConsulta("SELECT * FROM BUSINESS");
+                tableProductos = ConnectionDB.EjecutarConsulta("SELECT * FROM PRODUCT");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            foreach (DataRow dr in tableNegocios.Rows)
+
+            foreach (DataRow dr in tableProductos.Rows)
             {
-                negocios.Add(new Negocios
+                productos.Add(new Producto
                 (
                     Convert.ToInt32(dr[0].ToString()),
-                    dr[1].ToString(),
+                    Convert.ToInt32(dr[1].ToString()),
                     dr[2].ToString()
-                ));;
+                )); ;
             }
-            return negocios;
+            return productos;
         }
 
-        public static DataTable GetNegociosTable()
+        public static DataTable GetProductosTable()
         {
-            DataTable tableNegocios = null;
+            DataTable tableproductos = null;
 
             try
             {
-                tableNegocios = ConnectionDB.EjecutarConsulta("SELECT * FROM BUSINESS");
+                tableproductos = ConnectionDB.EjecutarConsulta("SELECT * FROM PRODUCT");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return tableNegocios;
+            return tableproductos;
         }
 
-        public static void CrearNegocio(string name, string desc)
+        public static void CrearProducto(string id, string name)
         {
             try
             {
-                ConnectionDB.EjecutarComando("INSERT INTO BUSINESS(name, description) " +
-                    $"VALUES('{name}', '{desc}')");
+                ConnectionDB.EjecutarComando($"INSERT INTO PRODUCT(idBusiness, name) " +
+                    $"VALUES('{id}', '{name}')");
 
-                MessageBox.Show("Se ha agregado el nuevo negocio.\n",
+                MessageBox.Show("Se ha agregado el nuevo producto.\n",
                     " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -68,13 +68,13 @@ namespace SourceCode.Controlador
             }
         }
 
-        public static void EliminarNegocio(string id)
+        public static void EliminarProducto(string id)
         {
             try
             {
-                ConnectionDB.EjecutarComando($"DELETE FROM BUSINESS WHERE idbusiness = {id}");
+                ConnectionDB.EjecutarComando($"DELETE FROM PRODUCT WHERE idproduct = {id}");
 
-                MessageBox.Show("Se ha eliminado el negocio");
+                MessageBox.Show("Se ha eliminado el producto");
             }
             catch (Exception ex)
             {
