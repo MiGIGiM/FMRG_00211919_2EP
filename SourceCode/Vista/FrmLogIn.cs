@@ -33,6 +33,8 @@ namespace SourceCode
             cmbLogUser.ValueMember = "Contrasena";
             cmbLogUser.DisplayMember = "NombreUsuario";
             cmbLogUser.DataSource = ControladorUsuario.GetUsuarios();
+
+
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)

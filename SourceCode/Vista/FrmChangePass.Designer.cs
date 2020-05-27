@@ -56,10 +56,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::SourceCode.Properties.Resources.hugo_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(348, 1);
+            this.pictureBox1.Image = global::SourceCode.Properties.Resources.hugo_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(296, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 88);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 88);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -73,7 +73,7 @@
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(131, 19);
+            this.txtNewPass.Location = new System.Drawing.Point(114, 15);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(192, 20);
             this.txtNewPass.TabIndex = 2;
@@ -90,7 +90,7 @@
             // lblCurrentPass
             // 
             this.lblCurrentPass.AutoSize = true;
-            this.lblCurrentPass.Location = new System.Drawing.Point(9, 19);
+            this.lblCurrentPass.Location = new System.Drawing.Point(9, 22);
             this.lblCurrentPass.Name = "lblCurrentPass";
             this.lblCurrentPass.Size = new System.Drawing.Size(99, 13);
             this.lblCurrentPass.TabIndex = 3;
@@ -99,7 +99,7 @@
             // lblNewPass
             // 
             this.lblNewPass.AutoSize = true;
-            this.lblNewPass.Location = new System.Drawing.Point(24, 22);
+            this.lblNewPass.Location = new System.Drawing.Point(9, 18);
             this.lblNewPass.Name = "lblNewPass";
             this.lblNewPass.Size = new System.Drawing.Size(101, 13);
             this.lblNewPass.TabIndex = 3;
@@ -107,10 +107,10 @@
             // 
             // grpUser
             // 
-            this.grpUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.grpUser.BackColor = System.Drawing.Color.White;
             this.grpUser.Controls.Add(this.cmbUser);
             this.grpUser.Controls.Add(this.lblUsername);
-            this.grpUser.Location = new System.Drawing.Point(13, 58);
+            this.grpUser.Location = new System.Drawing.Point(13, 73);
             this.grpUser.Name = "grpUser";
             this.grpUser.Size = new System.Drawing.Size(329, 51);
             this.grpUser.TabIndex = 4;
@@ -119,10 +119,10 @@
             // 
             // grpPass1
             // 
-            this.grpPass1.BackColor = System.Drawing.Color.MediumPurple;
+            this.grpPass1.BackColor = System.Drawing.Color.White;
             this.grpPass1.Controls.Add(this.txtPassActual);
             this.grpPass1.Controls.Add(this.lblCurrentPass);
-            this.grpPass1.Location = new System.Drawing.Point(13, 115);
+            this.grpPass1.Location = new System.Drawing.Point(12, 123);
             this.grpPass1.Name = "grpPass1";
             this.grpPass1.Size = new System.Drawing.Size(329, 55);
             this.grpPass1.TabIndex = 4;
@@ -131,10 +131,10 @@
             // 
             // grpPass2
             // 
-            this.grpPass2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.grpPass2.BackColor = System.Drawing.Color.White;
             this.grpPass2.Controls.Add(this.txtNewPass);
             this.grpPass2.Controls.Add(this.lblNewPass);
-            this.grpPass2.Location = new System.Drawing.Point(13, 176);
+            this.grpPass2.Location = new System.Drawing.Point(12, 177);
             this.grpPass2.Name = "grpPass2";
             this.grpPass2.Size = new System.Drawing.Size(329, 54);
             this.grpPass2.TabIndex = 5;
@@ -158,11 +158,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(443, 287);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnChangePass);
             this.Controls.Add(this.grpPass2);
             this.Controls.Add(this.grpPass1);
             this.Controls.Add(this.grpUser);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "FrmChangePass";
             this.Text = "Cambiar contraseña";
             this.Load += new System.EventHandler(this.FrmChangePass_Load);

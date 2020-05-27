@@ -23,7 +23,7 @@ namespace SourceCode.Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("Ha ocurrido un error","", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             foreach (DataRow dr in tableUsuarios.Rows)
@@ -52,7 +52,7 @@ namespace SourceCode.Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("Ha ocurrido un error","", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return tableUsuarios;
@@ -66,7 +66,7 @@ namespace SourceCode.Controlador
                 ConnectionDB.EjecutarComando($"UPDATE APPUSER SET password = '{nueva}' " +
                     $"WHERE idUser = {idUsuario}");
 
-                MessageBox.Show("Se ha actualizado la contraseña exitosamente", " ", MessageBoxButtons.OK);
+                MessageBox.Show("Se ha actualizado la contraseña exitosamente", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace SourceCode.Controlador
                     $" VALUES('{fullname}', '{usuario}', '{usuario}', false)");
 
                 MessageBox.Show("Se ha agregado el nuevo usuario.\n" +
-                    "Valores por defecto: contraseña igual a nombre de usuario", " ", MessageBoxButtons.OK);
+                    "Valores por defecto: contraseña igual a nombre de usuario", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
