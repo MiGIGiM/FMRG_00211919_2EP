@@ -36,10 +36,21 @@ namespace SourceCode.Vista
             cmbDeleteUser.DisplayMember = "NombreUsuario";
             cmbDeleteUser.DataSource = ControladorUsuario.GetUsuarios();
 
-            cmbNombreNeg.DataSource = cmbNegocios.DataSource = null;
-            cmbNombreNeg.ValueMember = cmbNegocios.ValueMember = "Nombre";
+            cmbDireccion.DataSource = null;
+            cmbDireccion.ValueMember = "Address";
+            cmbDireccion.DisplayMember = "Address";
+           cmbDireccion.DataSource = ControladorDireccion.GetDireccion();
+
+
+            cmbNegocios.DataSource = null;
+            cmbNegocios.ValueMember = "Nombre";
             cmbNegocios.DisplayMember = "Nombre";
-            cmbNombreNeg.DataSource = cmbNegocios.DataSource = ControladorNegocios.GetNegocios();
+            cmbNegocios.DataSource = ControladorNegocios.GetNegocios();
+
+            cmbNombreNeg.DataSource = null;
+            cmbNombreNeg.ValueMember = "Nombre";
+            cmbNombreNeg.DisplayMember = "Nombre";
+            cmbNombreNeg.DataSource = ControladorNegocios.GetNegocios();
 
 
             cmbNombreProd.DataSource = null;
@@ -47,24 +58,38 @@ namespace SourceCode.Vista
             cmbNombreProd.DisplayMember = "NombreProd";
             cmbNombreProd.DataSource = ControladorProducto.GetProductos();
 
+            cmbProductos.DataSource = null;
+            cmbProductos.ValueMember = "IdPedido";
+            cmbProductos.DisplayMember = "NombreProd";
+            cmbProductos.DataSource = ControladorProducto.GetProductos();
+
 
             dgvUsers.DataSource = ControladorUsuario.GetUsuariosTable();
 
             dgvNegocios.DataSource = ControladorNegocios.GetNegociosTable();
 
             dgvProd.DataSource = ControladorProducto.GetProductosTable();
+
+            dgvDeletePedido.DataSource = dgvPedidos.DataSource = ControladorPedido.GetPedidosTable(u.IdUsuario.ToString());
+
         }
 
+
         private void frmMain_Load(object sender, EventArgs e)
-        {     
+        {
+            CargarListas();
             if (u.Admin)
             {
-                CargarListas();
                 GetUsernames();
                 dgvPedidos.DataSource = ControladorPedido.GetPedidosTable();
+                tabOpciones.TabPages[4].Parent = null;
+                tabOpciones.TabPages[4].Parent = null;
             }
             else
             {
+                tabOpciones.TabPages[0].Parent = null;
+                tabOpciones.TabPages[0].Parent = null;
+                tabOpciones.TabPages[0].Parent = null;
 
             }
 
@@ -199,12 +224,72 @@ namespace SourceCode.Vista
 
         private void btnDeleteProducto_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea eliminar el negocio?", "",
+            if (MessageBox.Show("¿Seguro que desea eliminar el Producto?", "",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var obtenerId = (Producto)cmbNombreProd.SelectedItem;
                 ControladorProducto.EliminarProducto(obtenerId.IdProduct.ToString());
                 CargarListas();
+            }
+        }
+
+        private void btnAddPedido_Click(object sender, EventArgs e)
+        {
+            var obtenerId = (Direcciones)cmbDireccion.SelectedItem;
+            var prodId = (Producto)cmbProductos.SelectedItem;
+            var fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            ControladorPedido.CrearPedido(DateTime.Now, prodId.IdProduct.ToString(), obtenerId.IdAddress.ToString());
+
+            CargarListas();
+        }
+
+        private void btnDeleteDir_Click(object sender, EventArgs e)
+        {
+            if (txtIdPedido.Text.Equals(""))
+            {
+                MessageBox.Show("No deje campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("¿Seguro que desea eliminar el Pedido?", "",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    ControladorPedido.EliminarPedido(txtIdPedido.Text);
+                    CargarListas();
+                }
+            }
+        }
+
+        private void btnAddDir_Click(object sender, EventArgs e)
+        {
+            if (txtDir.Equals(""))
+            {
+                MessageBox.Show("No deje campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ControladorDireccion.CrearDireccion(u.IdUsuario.ToString(), txtDir.Text);
+                CargarListas();
+
+            }
+        }
+
+        private void btnBorrarDireccion_Click(object sender, EventArgs e)
+        {
+            if (txtEliminarDir.Text.Equals(""))
+            {
+                MessageBox.Show("No deje campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("¿Seguro que desea eliminar el Pedido?", "",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    ControladorDireccion.EliminarDireccion(txtEliminarDir.Text);
+                    CargarListas();
+                }
             }
         }
     }

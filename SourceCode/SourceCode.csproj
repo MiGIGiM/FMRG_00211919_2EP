@@ -136,10 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\ConnectionDB.cs" />
+    <Compile Include="Controlador\ControladorDireccion.cs" />
     <Compile Include="Controlador\ControladorNegocios.cs" />
     <Compile Include="Controlador\ControladorPedido.cs" />
     <Compile Include="Controlador\ControladorProducto.cs" />
     <Compile Include="Controlador\ControladorUsuario.cs" />
+    <Compile Include="Modelo\Direcciones.cs" />
     <Compile Include="Modelo\Negocios.cs" />
     <Compile Include="Modelo\Pedido.cs" />
     <Compile Include="Modelo\Producto.cs" />
@@ -202,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\hugo_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Web-LPC-397x265-2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

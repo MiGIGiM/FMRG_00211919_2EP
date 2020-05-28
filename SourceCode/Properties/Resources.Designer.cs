@@ -79,5 +79,15 @@ namespace SourceCode.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Web_LPC_397x265_2 {
+            get {
+                object obj = ResourceManager.GetObject("Web-LPC-397x265-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

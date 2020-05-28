@@ -11,7 +11,7 @@ namespace SourceCode.Controlador
 {
     public static class ControladorPedido
     {
-        public static List<Pedido> GetUsuarios()
+        public static List<Pedido> GetPedidos()
         {
             var pedidos = new List<Pedido>();
             DataTable tablepedidos = null;
@@ -39,6 +39,7 @@ namespace SourceCode.Controlador
 
             return pedidos;
         }
+
 
         public static DataTable GetPedidosTable()
         {
@@ -69,7 +70,8 @@ namespace SourceCode.Controlador
                                                              "FROM APPORDER ao, ADDRESS ad, PRODUCT pr, APPUSER au " +
                                                              "WHERE ao.idProduct = pr.idProduct " +
                                                              "AND ao.idAddress = ad.idAddress " +
-                                                             $"AND ad.idUser = au.'{idUser}'");
+                                                             $"AND ad.idUser = au.idUser " +
+                                                             $"AND au.idUser ={idUser} ");
             }
             catch (Exception ex)
             {
@@ -80,34 +82,32 @@ namespace SourceCode.Controlador
         }
 
 
-        public static void CrearProducto(DateTime date ,string idP, string idA)
+        public static void CrearPedido(DateTime date ,string idP, string idA)
         {
-            try
-            {
+
                 ConnectionDB.EjecutarComando($"INSERT INTO APPORDER(createDate, idProduct, idAddress) " +
                                              $"VALUES('{date}', '{idP}', '{idA}')");
 
                 MessageBox.Show("Se ha agregado el pedido.\n",
                     " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+           /* }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error");
-            }
+            }*/
         }
 
         public static void EliminarPedido(string id)
         {
-            try
-            {
+
                 ConnectionDB.EjecutarComando($"DELETE FROM APPORDER WHERE idorder = '{id}'");
 
                 MessageBox.Show("Se ha eliminado el producto");
-            }
-            catch (Exception ex)
+
+            /*catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error");
-            }
+            }*/
         }
 
     }
