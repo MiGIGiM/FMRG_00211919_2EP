@@ -52,6 +52,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(181, 225);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(230, 20);
             this.txtPassword.TabIndex = 1;
             // 
@@ -127,6 +128,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.cmbLogUser);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(548, 433);
+            this.MinimumSize = new System.Drawing.Size(548, 433);
             this.Name = "frmLogIn";
             this.Text = "Iniciar sesión";
             this.Load += new System.EventHandler(this.frmLogIn_Load);

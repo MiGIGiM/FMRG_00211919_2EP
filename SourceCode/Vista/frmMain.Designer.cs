@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tabOpciones = new System.Windows.Forms.TabControl();
             this.AdminUsuarios = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -87,14 +88,15 @@
             this.AdminDirecciones = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtDir = new System.Windows.Forms.TextBox();
             this.btnAddDir = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dgvEliminarDir = new System.Windows.Forms.DataGridView();
+            this.txtEliminarDir = new System.Windows.Forms.TextBox();
             this.btnBorrarDireccion = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtEliminarDir = new System.Windows.Forms.TextBox();
-            this.dgvEliminarDir = new System.Windows.Forms.DataGridView();
             this.tabOpciones.SuspendLayout();
             this.AdminUsuarios.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -122,6 +124,7 @@
             this.AdminDirecciones.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarDir)).BeginInit();
             this.SuspendLayout();
@@ -144,6 +147,7 @@
             // AdminUsuarios
             // 
             this.AdminUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.AdminUsuarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AdminUsuarios.BackgroundImage")));
             this.AdminUsuarios.Controls.Add(this.tableLayoutPanel1);
             this.AdminUsuarios.Location = new System.Drawing.Point(4, 22);
             this.AdminUsuarios.Name = "AdminUsuarios";
@@ -231,6 +235,7 @@
             // 
             // dgvUsers
             // 
+            this.dgvUsers.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dgvUsers, 2);
             this.dgvUsers.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -274,6 +279,8 @@
             // 
             // AdminNegocios
             // 
+            this.AdminNegocios.BackColor = System.Drawing.Color.Transparent;
+            this.AdminNegocios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AdminNegocios.BackgroundImage")));
             this.AdminNegocios.Controls.Add(this.tableLayoutPanel2);
             this.AdminNegocios.Location = new System.Drawing.Point(4, 22);
             this.AdminNegocios.Name = "AdminNegocios";
@@ -281,7 +288,6 @@
             this.AdminNegocios.Size = new System.Drawing.Size(662, 365);
             this.AdminNegocios.TabIndex = 1;
             this.AdminNegocios.Text = "Administrar Negocios";
-            this.AdminNegocios.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -412,6 +418,7 @@
             // 
             // dgvNegocios
             // 
+            this.dgvNegocios.BackgroundColor = System.Drawing.Color.MediumPurple;
             this.dgvNegocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel2.SetColumnSpan(this.dgvNegocios, 2);
             this.dgvNegocios.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -422,13 +429,14 @@
             // 
             // AdminProductos
             // 
+            this.AdminProductos.BackColor = System.Drawing.Color.Transparent;
+            this.AdminProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AdminProductos.BackgroundImage")));
             this.AdminProductos.Controls.Add(this.tableLayoutPanel3);
             this.AdminProductos.Location = new System.Drawing.Point(4, 22);
             this.AdminProductos.Name = "AdminProductos";
             this.AdminProductos.Size = new System.Drawing.Size(662, 365);
             this.AdminProductos.TabIndex = 2;
             this.AdminProductos.Text = "Administrar Productos";
-            this.AdminProductos.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -510,6 +518,7 @@
             // 
             // dgvProd
             // 
+            this.dgvProd.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgvProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel3.SetColumnSpan(this.dgvProd, 2);
             this.dgvProd.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -562,13 +571,14 @@
             // 
             // VerPedidos
             // 
+            this.VerPedidos.BackColor = System.Drawing.Color.Transparent;
+            this.VerPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("VerPedidos.BackgroundImage")));
             this.VerPedidos.Controls.Add(this.dgvPedidos);
             this.VerPedidos.Location = new System.Drawing.Point(4, 22);
             this.VerPedidos.Name = "VerPedidos";
             this.VerPedidos.Size = new System.Drawing.Size(662, 365);
             this.VerPedidos.TabIndex = 3;
             this.VerPedidos.Text = "Ver Historial de Pedidos";
-            this.VerPedidos.UseVisualStyleBackColor = true;
             // 
             // dgvPedidos
             // 
@@ -581,13 +591,14 @@
             // 
             // AdminPedidos
             // 
+            this.AdminPedidos.BackColor = System.Drawing.Color.Transparent;
+            this.AdminPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AdminPedidos.BackgroundImage")));
             this.AdminPedidos.Controls.Add(this.tableLayoutPanel4);
             this.AdminPedidos.Location = new System.Drawing.Point(4, 22);
             this.AdminPedidos.Name = "AdminPedidos";
             this.AdminPedidos.Size = new System.Drawing.Size(662, 365);
             this.AdminPedidos.TabIndex = 4;
             this.AdminPedidos.Text = "Administrar Pedidos";
-            this.AdminPedidos.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
@@ -721,6 +732,7 @@
             // 
             // dgvDeletePedido
             // 
+            this.dgvDeletePedido.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvDeletePedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeletePedido.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDeletePedido.Location = new System.Drawing.Point(3, 134);
@@ -730,13 +742,14 @@
             // 
             // AdminDirecciones
             // 
+            this.AdminDirecciones.BackColor = System.Drawing.Color.Transparent;
+            this.AdminDirecciones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AdminDirecciones.BackgroundImage")));
             this.AdminDirecciones.Controls.Add(this.tableLayoutPanel5);
             this.AdminDirecciones.Location = new System.Drawing.Point(4, 22);
             this.AdminDirecciones.Name = "AdminDirecciones";
             this.AdminDirecciones.Size = new System.Drawing.Size(662, 365);
             this.AdminDirecciones.TabIndex = 5;
             this.AdminDirecciones.Text = "Administrar direcciones";
-            this.AdminDirecciones.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel5
             // 
@@ -757,6 +770,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.pictureBox2);
             this.groupBox6.Controls.Add(this.txtDir);
             this.groupBox6.Controls.Add(this.btnAddDir);
             this.groupBox6.Controls.Add(this.label10);
@@ -767,6 +781,16 @@
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Agregar dirección: ";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SourceCode.Properties.Resources.decor;
+            this.pictureBox2.Location = new System.Drawing.Point(54, 145);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(214, 183);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // txtDir
             // 
@@ -809,6 +833,22 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Eliminar dirección: ";
             // 
+            // dgvEliminarDir
+            // 
+            this.dgvEliminarDir.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
+            this.dgvEliminarDir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEliminarDir.Location = new System.Drawing.Point(0, 113);
+            this.dgvEliminarDir.Name = "dgvEliminarDir";
+            this.dgvEliminarDir.Size = new System.Drawing.Size(319, 240);
+            this.dgvEliminarDir.TabIndex = 3;
+            // 
+            // txtEliminarDir
+            // 
+            this.txtEliminarDir.Location = new System.Drawing.Point(83, 45);
+            this.txtEliminarDir.Name = "txtEliminarDir";
+            this.txtEliminarDir.Size = new System.Drawing.Size(40, 20);
+            this.txtEliminarDir.TabIndex = 2;
+            // 
             // btnBorrarDireccion
             // 
             this.btnBorrarDireccion.Location = new System.Drawing.Point(172, 41);
@@ -828,29 +868,17 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Dirección: ";
             // 
-            // txtEliminarDir
-            // 
-            this.txtEliminarDir.Location = new System.Drawing.Point(83, 45);
-            this.txtEliminarDir.Name = "txtEliminarDir";
-            this.txtEliminarDir.Size = new System.Drawing.Size(40, 20);
-            this.txtEliminarDir.TabIndex = 2;
-            // 
-            // dgvEliminarDir
-            // 
-            this.dgvEliminarDir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEliminarDir.Location = new System.Drawing.Point(13, 113);
-            this.dgvEliminarDir.Name = "dgvEliminarDir";
-            this.dgvEliminarDir.Size = new System.Drawing.Size(292, 215);
-            this.dgvEliminarDir.TabIndex = 3;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SourceCode.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(670, 403);
             this.Controls.Add(this.tabOpciones);
+            this.MaximumSize = new System.Drawing.Size(686, 442);
+            this.MinimumSize = new System.Drawing.Size(686, 442);
             this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.Text = "Pantalla Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.tabOpciones.ResumeLayout(false);
@@ -888,6 +916,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminarDir)).EndInit();
@@ -964,5 +993,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEliminarDir;
         private System.Windows.Forms.DataGridView dgvEliminarDir;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -42,7 +42,7 @@ namespace SourceCode.Controlador
 
             try
             {
-                tableNegocios = ConnectionDB.EjecutarConsulta($"SELECT address FROM ADDRESS WHERE iduser = '{id}'");
+                tableNegocios = ConnectionDB.EjecutarConsulta($"SELECT idaddress, address FROM ADDRESS WHERE iduser = '{id}'");
             }
             catch (Exception ex)
             {
@@ -71,7 +71,8 @@ namespace SourceCode.Controlador
         {
             try
             {
-                ConnectionDB.EjecutarComando($"DELETE FROM ADDRESS WHERE idUser = {id}");
+                ConnectionDB.EjecutarComando("DELETE FROM address " +
+                    $"WHERE idaddress={id}");
 
                 MessageBox.Show("Se ha eliminado la dirección");
             }

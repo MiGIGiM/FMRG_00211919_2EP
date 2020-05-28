@@ -63,9 +63,9 @@ namespace SourceCode.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hugo_icon {
+        internal static System.Drawing.Bitmap decor {
             get {
-                object obj = ResourceManager.GetObject("hugo_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("decor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace SourceCode.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hugo_logo {
+        internal static System.Drawing.Bitmap fondo {
             get {
-                object obj = ResourceManager.GetObject("hugo_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hugo_icon {
+            get {
+                object obj = ResourceManager.GetObject("hugo_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

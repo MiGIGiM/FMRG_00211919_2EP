@@ -141,6 +141,7 @@
     <Compile Include="Controlador\ControladorPedido.cs" />
     <Compile Include="Controlador\ControladorProducto.cs" />
     <Compile Include="Controlador\ControladorUsuario.cs" />
+    <Compile Include="Modelo\AlreadyExistingUserException.cs" />
     <Compile Include="Modelo\Direcciones.cs" />
     <Compile Include="Modelo\Negocios.cs" />
     <Compile Include="Modelo\Pedido.cs" />
@@ -207,6 +208,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\Web-LPC-397x265-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\decor.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

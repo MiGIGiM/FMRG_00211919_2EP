@@ -72,6 +72,8 @@ namespace SourceCode.Vista
 
             dgvDeletePedido.DataSource = dgvPedidos.DataSource = ControladorPedido.GetPedidosTable(u.IdUsuario.ToString());
 
+            dgvEliminarDir.DataSource = ControladorDireccion.GetDireccionesTable(u.IdUsuario.ToString());
+
         }
 
 
@@ -130,9 +132,7 @@ namespace SourceCode.Vista
                 {
                     if(Available(GetUsernames(), txtUsername.Text))
                         {
-                            MessageBox.Show("Nombre de usuario no disponible"
-                                , "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtUsername.Text = "";
+                        throw new AlreadyExistingUserException();
                         }
                     else
                     {
@@ -144,9 +144,9 @@ namespace SourceCode.Vista
  
                 }
             }
-            catch (Exception ex)
+            catch (AlreadyExistingUserException ex)
             {
-                MessageBox.Show("Algo salió mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nombre de usuario no disponible", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
